@@ -1,41 +1,28 @@
 package entities;
-import java.util.Scanner;
 
-public class Dados {
-	Scanner sc =  new Scanner(System.in);
+abstract class Dados {
+	private double[] data;
+	private int quantidade;
 	
-	public int i;
-	public int j;
-	public double Data[][];
-	
-	
-	public int lines(int i) {
-		this.i = i;
-		return this.i;
+	public Dados( double[] data, int quantidade) {
+		this.data = data;
+		this.quantidade = quantidade;
 	}
 	
-	public int columns(int j) {
-		this.j = j;
-		return j;
-	}
-	
-	public double Data() {
-		this.Data = new double[this.i][this.j];
-		
-		for (int cont = 0; cont < this.i; cont++) {
-			
-			for (int cont2 = 1; cont2 <= this.j; cont2++) {
-				
-				System.out.printf("Insira o %dº valor: ", cont2);
-				this.Data[cont][cont2 -1] = sc.nextDouble();
-				
-			}
+	public void mostrarDados() {
+		for ( int i = 0; i < quantidade; i++ ) {
+			System.out.printf("%.2f  ", data[i]);
 		}
-		
-		sc.close();
-		
-		return this.Data[this.i - 1][this.j - 1];
 	}
 	
-
+	public void setData( double[] data ) {
+		this.data = data;
+	}
+	
+	public int getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade( int quantidade ) {
+		this.quantidade = quantidade;
+	}
 }

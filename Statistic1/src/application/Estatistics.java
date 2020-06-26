@@ -14,7 +14,7 @@ public class Estatistics {
 		System.out.print("Insira a quantidade de dados a serem armazenadas: ");
 		int quantidade = sc.nextInt();
 		
-		double[] dados = new double[quantidade];
+		Double[] dados = new Double[quantidade];
 		
 		for ( int i = 0; i < quantidade; i++) {
 			System.out.printf("Insira o %dº valor: ", i + 1);
@@ -22,8 +22,9 @@ public class Estatistics {
 		}
 		
 		Rol data = new Rol( dados, quantidade );
-		data.mostrarDados();
-
+		
+		data.organizaDados();
+		data.mostrarRol();
 		
 		sc.close();
 	}

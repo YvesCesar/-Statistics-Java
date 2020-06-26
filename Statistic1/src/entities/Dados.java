@@ -1,10 +1,10 @@
 package entities;
 
 abstract class Dados {
-	private double[] data;
-	private int quantidade;
+	private Double[] data;
+	private Integer quantidade;
 	
-	public Dados( double[] data, int quantidade) {
+	public Dados( Double[] data, Integer quantidade) {
 		this.data = data;
 		this.quantidade = quantidade;
 	}
@@ -15,14 +15,17 @@ abstract class Dados {
 		}
 	}
 	
-	public void setData( double[] data ) {
+	public void setData( Double[] data ) {
 		this.data = data;
+	}
+	public Double[] getData() {
+		return this.data;
 	}
 	
 	public int getQuantidade() {
 		return quantidade;
 	}
-	public void setQuantidade( int quantidade ) {
+	public void setQuantidade( Integer quantidade ) {
 		this.quantidade = quantidade;
 	}
 }
